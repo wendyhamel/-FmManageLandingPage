@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link href="./src/output.css" rel="stylesheet">
+
+  <!-- Alpine Core -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <title>Frontend Mentor | Manage landing page</title>
+
+</head>
+<body x-data="showContent()">
+<header class="py-4 px-8">
+  <nav class="relative z-10 px-6 flex items-center justify-between gap-6 md:justify-normal md:pl-1 md:pr-0 md:gap-16">
+    <a href="#">
+      <img src="./images/logo.svg" alt="manage"/>
+    </a>
+    <div class="hidden md:block md:w-full md:flex md:items-center md:justify-between md:gap-6">
+      <ul class="flex items-center gap-8">
+        <template x-for="item in menuItems">
+          <li class="group relative">
+               <a class="hover:font-bold transition" :href="item.href" x-text="item.title"></a>
+          </li>
+        </template>
+      </ul>
+        <button>Get Started</button>
+    </div>
+    <div class="relative md:hidden" @keyup.escape="menuOpened = false">
+      <button x-on:click="menuOpened = !menuOpened">
+        <span class="sr-only" x-text="menuOpened ? 'close menu' : 'open menu'"></span>
+        <span
+                x-show="!menuOpened"
+                class="w-4 h-4"
+        >
+          <img src="./images/icon-hamburger.svg" alt=""/>
+        </span>
+        <span
+                x-show="menuOpened"
+                class="w-4 h-4"
+        >
+          <img src="./images/icon-close.svg"/>
+        </span>
+      </button>
+      <div x-show="menuOpened" style="display:none !important;" class="fixed inset-x-0 px-6 bg-white" x-trap.noscroll="menuOpened">
+        <div class="py-8 px-4 mr-3 mt-9 text-center rounded shadow-2xl">
+          <ul class="flex flex-col justify-center gap-6">
+            <template x-for="item in menuItems" :key="index">
+              <li class="mx-3 font-bold">
+                <a class="opacity-80" :href="item.href" x-text="item.title"></a>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+    <section style="background-image: url('./images/bg-tablet-pattern.svg')">
+        <img src="./images/illustration-intro.svg" alt="">
+        <h2>
+            Bring everyone together to build better products.
+        </h2>
+        <p>
+            Manage makes it simple for software teams to plan day-to-day
+            tasks while keeping the larger team goals in view.
+        </p>
+        <button>
+            Get Started
+        </button>
+    </section>
+    <section style="background-image: url('./images/bg-tablet-pattern.svg')">
+        <h3>
+            What’s different about Manage?
+        </h3>
+        <p>
+            Manage provides all the functionality your team needs, without
+            the complexity. Our software is tailor-made for modern digital
+            product teams.
+        </p>
+        <ul>
+            <template x-for="point in sellingPoints">
+                <li>
+                    <p>
+                        <span x-text="point.number"></span>
+                        <span x-text="point.title"></span>
+                    </p>
+                    <p x-text="point.description"></p>
+                </li>
+            </template>
+        </ul>
+    </section>
+    <section>
+        <h3>
+            What they’ve said
+        </h3>
+        <ul>
+            <template x-for="testimonial in testimonials">
+                <li>
+                    <img :src="testimonial.image" :alt="testimonial.name + ' ' + testimonial.description">
+                    <p x-text="testimonial.name"></p>
+                    <p x-text="testimonial.description"></p>
+                </li>
+            </template>
+        </ul>
+    </section>
+
+    <section>
+        <button>Get Started</button>
+    </section>
+
+    <section class="bg-red text-red-pale">
+        <picture>
+            <source srcset="./images/bg-simplify-section-mobile.svg" media="(max-width: 767px)">
+            <source srcset="./images/bg-simplify-section-desktop.svg" media="(min-width: 768px)">
+            <img
+                    class=""
+                    src="./images/bg-simplify-section-desktop.svg"
+                    alt=""
+            >
+        </picture>
+        <h3>Simplify how your team works today.
+        </h3>
+        <button>Get Started</button>
+    </section>
+</main>
+<footer class="bg-blue-dark text-gray">
+    <section>
+        <div>
+            <input type="text" placeholder="Updates in your inbox…"> <button>Go</button>
+        </div>
+        <ul>
+            <template x-for="item in menuItems">
+                <li><a :href="item.href" x-text="item.title"></a></li>
+            </template>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <div>
+
+        <ul>
+            <template x-for="social in socials">
+                <li>
+                    <a :href="social.href">
+                        <img :src="social.image" :alt="social.name">
+                    </a>
+                </li>
+            </template>
+        </ul>
+            <a href="#">
+                <img src="./images/logo.svg" alt="manage">
+            </a>
+        </div>
+        <p>Copyright 2020. All Rights Reserved</p>
+    </section>
+    <section class="fixed bottom-0 inset-x-0 text-center text-xs text-black bg-white/80 py-1 opacity-0 translate-y-2 hover:opacity-100 hover:translate-y-0 transform transition ease-in-out duration-150">
+      Challenge by <a class="hover:underline" href="https://www.frontendmentor.io/challenges/manage-landing-page-SLXqC6P5" target="_blank">Frontend Mentor</a>.
+      Coded by <a class="hover:underline" href="https://www.frontendmentor.io/profile/wendyhamel" target="_blank">Wendy Hamel</a>.
+    </section>
+</footer>
+<script src="./src/content.js"></script>
+</body>
+</html>
