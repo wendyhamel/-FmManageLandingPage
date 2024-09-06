@@ -7,14 +7,7 @@
 	font-style: normal;
 	font-weight: 400;
 	font-display: swap;
-	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf") format('ttf');
-}
-@font-face {
-	font-family: "Be Vietnam Pro";
-	font-style: italic;
-	font-weight: 400;
-	font-display: swap;
-	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Italic.ttf") format('ttf');
+	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.woff") format('woff'), url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Regular.ttf") format('ttf');
 }
 
 @font-face {
@@ -22,14 +15,7 @@
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
-	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Medium.ttf") format('ttf');
-}
-@font-face {
-	font-family: "Be Vietnam Pro";
-	font-style: italic;
-	font-weight: 500;
-	font-display: swap;
-	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-MediumItalic.ttf") format('ttf');
+	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Medium.woff") format('woff'), url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Medium.ttf") format('ttf');
 }
 
 @font-face {
@@ -37,12 +23,5 @@
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
-	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.ttf") format('ttf');
-}
-@font-face {
-	font-family: "Be Vietnam Pro";
-	font-style: italic;
-	font-weight:700;
-	font-display: swap;
-	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-BoldItalic.ttf") format('ttf');
+	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.woff") format('woff'), url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.ttf") format('ttf');
 }

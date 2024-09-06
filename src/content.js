@@ -1,12 +1,8 @@
 window.showContent = function () {
 	return {
-		menuOpened: false,
+		menuOpened: true,
 		subMenuOpened: false,
 		menuItems: [
-			{
-				title: 'Home',
-				href: '#',
-			},
 			{
 				title: 'Pricing',
 				href: '#',
