@@ -1,6 +1,6 @@
 window.showContent = function () {
 	return {
-		menuOpened: true,
+		menuOpened: false,
 		subMenuOpened: false,
 		menuItems: [
 			{
@@ -8,7 +8,7 @@ window.showContent = function () {
 				href: '#',
 			},
 			{
-				title: 'Products',
+				title: 'Product',
 				href: '#',
 			},
 			{
