@@ -8,7 +8,10 @@
 
   <link href="./src/output.css" rel="stylesheet">
 
-  <!-- Alpine Core -->
+    <!-- Alpine Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Alpine Core -->
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <title>Frontend Mentor | Manage landing page</title>
@@ -71,51 +74,63 @@
                 Manage makes it simple for software teams to plan day-to-day
                 tasks while keeping the larger team goals in view.
             </p>
-            <button class="bg-red text-red-pale shadow-lg shadow-red/50 rounded-full leading-none text-xs font-bold text-center py-4 px-8 mx-auto">
+            <button type="button" class="bg-red text-red-pale shadow-lg shadow-red/50 rounded-full leading-none text-xs font-bold text-center py-4 px-8 mx-auto">
                 Get Started
             </button>
         </div>
     </section>
     <section class="grid gap-2 px-4">
-        <h3 class="font-bold text-[1.75rem] text-center leading-[2.8rem] pt-2">
+        <h3 class="font-bold text-3.5xl text-center leading-11 tracking-tight-md pt-2">
             What’s different <br/> about Manage?
         </h3>
-        <p class="text-blue-gray text-sm text-center leading-7 font-medium px-4 pb-4">
+        <p class="text-blue-gray text-sm text-center leading-7 tracking-tight font-medium px-4 pb-4">
             Manage provides all the functionality your team needs, without
             the complexity. Our software is tailor-made for modern digital
             product teams.
         </p>
     </section>
     <section>
-        <ul>
+        <ul class="pt-.5 space-y-10">
             <template x-for="point in sellingPoints">
-                <li classs="pl-4">
-                    <p class="inline-flex bg-red-pale rounded-l-full">
-                        <span class="block bg-red rounded-full text-red-pale font-medium px-4 py-2" x-text="point.number"></span>
-                        <span class="font-medium px-4 py-2" x-text="point.title"></span>
+                <li class="pl-4">
+                    <p class="inline-flex bg-red-pale rounded-l-full w-full gap-4">
+                        <span class="block bg-red rounded-full text-red-pale font-medium px-6 py-2" x-text="point.number"></span>
+                        <span class="grow py-2 font-bold tracking-tighter" x-text="point.title"></span>
                     </p>
-                    <p x-text="point.description"></p>
+                    <p class="text-blue-gray text-sm leading-7 tracking-tight pt-3 pe-4" x-text="point.description"></p>
                 </li>
             </template>
         </ul>
     </section>
     <section>
-        <h3>
+        <h3 class="font-bold text-3.5xl text-center leading-11 tracking-tight-md pt-14">
             What they’ve said
         </h3>
-        <ul>
-            <template x-for="testimonial in testimonials">
-                <li>
-                    <img :src="testimonial.image" :alt="testimonial.name + ' ' + testimonial.description">
-                    <p x-text="testimonial.name"></p>
-                    <p x-text="testimonial.description"></p>
-                </li>
-            </template>
-        </ul>
+        <div class="overflow-hidden">
+            <ul class="mt-16 grid grid-flow-col auto-cols-[100%] relative overflow-x-auto overscroll-x-contain snap-x hide-scrollbar">
+                <template x-for="testimonial in testimonials">
+                    <li
+                        class="bg-gray mt-8 mx-4 px-4 grid gap-6 pb-8"
+                        x-intersect.full="activeTm = testimonial.id"
+                    >
+                        <img class="rounded-full w-[4.5rem] h-[4.5rem] -mt-8 mx-auto" :src="testimonial.image" :alt="testimonial.name + ' ' + testimonial.description">
+                        <p class="font-bold text-center" x-text="testimonial.name"></p>
+                        <p class="text-blue-gray text-sm leading-6 tracking-tight text-center px-4" x-text="testimonial.description"></p>
+                    </li>
+                </template>
+            </ul>
+            <ul class="flex gap-1 justify-center pt-2">
+                <template x-for="testimonial in testimonials">
+                    <li>
+                        <button type="button" class="rounded-full border border-red w-2 h-2" :class="'bg-red': active === testimonial.id" x-on:click="active = testimonial.id"><span x-text="testimonial.id" class="sr-only"></span></button>
+                    </li>
+                </template>
+            </ul>
+        </div>
     </section>
 
-    <section>
-        <button>Get Started</button>
+    <section class="grid items-center px-4 py-10">
+        <button type="button" class="bg-red text-red-pale shadow-lg shadow-red/50 rounded-full leading-none text-xs font-bold text-center py-4 px-8 mx-auto">Get Started</button>
     </section>
 
     <section class="bg-red text-red-pale">
