@@ -19,24 +19,24 @@
 
 </head>
 <body x-data="showContent()" class="antialiased text-blue">
-<div class="absolute overflow-hidden">
-    <img class="-translate-y-[20%] translate-x-[25%] scale-[1.2]" src="./images/bg-tablet-pattern.svg"/>
+<div class="absolute overflow-hidden right-0">
+    <img class="-translate-y-[20%] translate-x-[25%] scale-[1.2] sm:scale-100" src="./images/bg-tablet-pattern.svg"/>
 </div>
-<header class="relative px-6 py-10">
-  <nav class="relative z-10 flex items-center justify-between gap-6 md:justify-normal">
-    <a href="#">
-      <img class="w-28" src="./images/logo.svg" alt="manage"/>
+<header class="relative px-6 py-10 max-w-screen-xl mx-auto md:px-20 md:pt-14 md:mb-16">
+  <nav class="relative z-10 flex items-center justify-between gap-6">
+    <a class="md:shrink-0 md:pt-2 md:pl-1.5" href="#">
+      <img class="w-28 md:w-full" src="./images/logo.svg" alt="manage"/>
     </a>
-    <div class="hidden md:block md:w-full md:flex md:items-center md:justify-between md:gap-6">
-      <ul class="flex items-center gap-8">
+    <ul class="hidden md:block md:w-full md:flex md:justify-center md:items-center md:gap-8">
         <template x-for="item in menuItems">
-          <li class="group relative">
-               <a class="hover:text-blue-gray transition" :href="item.href" x-text="item.title"></a>
-          </li>
+            <li class="group relative">
+                <a class="text-xs font-medium tracking-wide hover:text-blue-gray transition" :href="item.href" x-text="item.title"></a>
+            </li>
         </template>
-      </ul>
-        <button>Get Started</button>
-    </div>
+    </ul>
+      <div class="hidden md:block md:shrink-0 md:pl-4">
+          <button type="button" class="bg-red text-red-pale shadow-lg shadow-red/50 rounded-full leading-none text-xs font-bold text-center py-4 px-8 focus:outline-blue hover:opacity-80 transition">Get Started</button>
+      </div>
     <div class="relative md:hidden" @keyup.escape="menuOpened = false">
       <button class="relative z-30" x-on:click="menuOpened = !menuOpened">
         <span class="sr-only" x-text="menuOpened ? 'close menu' : 'open menu'"></span>
@@ -61,47 +61,54 @@
     </div>
   </nav>
 </header>
-<main class="relative mx-auto max-w-screen-xl">
-    <section class="relative pb-20">
-        <div class="absolute overflow-hidden bottom-0 -mb-10">
+<main class="relative">
+    <section class="relative pb-20 max-w-screen-xl mx-auto md:px-20 md:pt-1">
+        <div class="absolute overflow-hidden right-0 bottom-0 -mb-10 sm:hidden">
             <img class="scale-[82%] translate-x-[55%]" src="./images/bg-tablet-pattern.svg"/>
         </div>
-        <div class="relative grid gap-2 pb-2 px-4">
-            <img class="" src="./images/illustration-intro.svg" alt="">
-            <h2 class="font-bold text-4xl text-center leading-[3rem] pt-1">
-                Bring everyone together to build better products.
-            </h2>
-            <p class="text-blue-gray text-center leading-7 px-4 pb-4">
-                Manage makes it simple for software teams to plan day-to-day
-                tasks while keeping the larger team goals in view.
-            </p>
-            <button type="button" class="bg-red text-red-pale shadow-lg shadow-red/50 rounded-full leading-none text-xs font-bold text-center py-4 px-8 mx-auto focus:outline-blue hover:opacity-80 transition">
-                Get Started
-            </button>
+        <div class="relative grid gap-2 pb-2 px-4 md:grid-cols-2 md:px-0">
+            <img class="mx-auto md:col-start-2 md:mx-0" src="./images/illustration-intro.svg" alt="">
+            <div class="flex flex-col gap-2 md:col-start-1 md:row-start-1 md:justify-center md:pl-2 md:gap-6">
+                <h2 class="font-bold text-4xl text-center leading-[3rem] pt-1 md:text-[3.5rem] md:text-start md:leading-[4rem] md:tracking-tighter">
+                    Bring everyone together to build better products.
+                </h2>
+                <p class="text-blue-gray text-center leading-7 px-4 pb-4 md:text-start md:pl-0 md:pr-8 md:max-w-sm">
+                    Manage makes it simple for software teams to plan day-to-day
+                    tasks while keeping the larger team goals in view.
+                </p>
+                <button type="button" class="mx-auto bg-red text-red-pale shadow-lg shadow-red/50 rounded-full leading-none text-xs font-bold text-center py-4 px-8 focus:outline-blue hover:opacity-80 transition md:ml-0">
+                    Get Started
+                </button>
+            </div>
         </div>
     </section>
-    <section class="grid gap-2 px-4">
-        <h3 class="font-bold text-3.5xl text-center leading-11 tracking-tight-md pt-2">
-            What’s different <br/> about Manage?
-        </h3>
-        <p class="text-blue-gray text-sm text-center leading-7 tracking-tight font-medium px-4 pb-4">
-            Manage provides all the functionality your team needs, without
-            the complexity. Our software is tailor-made for modern digital
-            product teams.
-        </p>
-    </section>
-    <section>
-        <ul class="pt-.5 space-y-10">
-            <template x-for="point in sellingPoints" :key="index">
-                <li class="pl-4">
-                    <p class="inline-flex bg-red-pale rounded-l-full w-full gap-4">
-                        <span class="block bg-red rounded-full text-red-pale font-medium px-6 py-2" x-text="point.number"></span>
-                        <span class="grow py-2 font-bold tracking-tighter" x-text="point.title"></span>
-                    </p>
-                    <p class="text-blue-gray text-sm leading-7 tracking-tight pt-3 pe-4" x-text="point.description"></p>
-                </li>
-            </template>
-        </ul>
+    <section class="relative sm:flex">
+        <div class="hidden sm:block sm:absolute sm:overflow-hidden sm:bottom-0">
+            <img class="-translate-x-[62%] translate-y-1/2" src="./images/bg-tablet-pattern.svg"/>
+        </div>
+        <section class="relative flex flex-col gap-2 px-4">
+            <h3 class="font-bold text-3.5xl text-center leading-11 tracking-tight-md pt-2">
+                What’s different <br/> about Manage?
+            </h3>
+            <p class="text-blue-gray text-sm text-center leading-7 tracking-tight font-medium px-4 pb-4">
+                Manage provides all the functionality your team needs, without
+                the complexity. Our software is tailor-made for modern digital
+                product teams.
+            </p>
+        </section>
+        <section class="relative">
+            <ul class="pt-.5 space-y-10">
+                <template x-for="point in sellingPoints" :key="index">
+                    <li class="pl-4">
+                        <p class="inline-flex bg-red-pale rounded-l-full w-full gap-4">
+                            <span class="block bg-red rounded-full text-red-pale font-medium px-6 py-2" x-text="point.number"></span>
+                            <span class="grow py-2 font-bold tracking-tighter" x-text="point.title"></span>
+                        </p>
+                        <p class="text-blue-gray text-sm leading-7 tracking-tight pt-3 pe-4" x-text="point.description"></p>
+                    </li>
+                </template>
+            </ul>
+        </section>
     </section>
     <section>
         <h3 class="font-bold text-3.5xl text-center leading-11 tracking-tight-md pt-14">
