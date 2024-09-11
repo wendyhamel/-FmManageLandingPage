@@ -3,6 +3,10 @@ window.showContent = function () {
 		menuOpened: false,
 		subMenuOpened: false,
 		activeTm: 'tm02',
+		showTm (selectedTmId) {
+			return selectedTmId.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+			console.log(selectedTmId)
+		},
 		menuItems: [
 			{
 				title: 'Pricing',
