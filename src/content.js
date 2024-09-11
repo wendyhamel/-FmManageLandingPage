@@ -4,8 +4,8 @@ window.showContent = function () {
 		subMenuOpened: false,
 		activeTm: 'tm02',
 		showTm (selectedTmId) {
-			return selectedTmId.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-			console.log(selectedTmId)
+			const element = document.getElementById(selectedTmId)
+			element.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
 		},
 		menuItems: [
 			{
