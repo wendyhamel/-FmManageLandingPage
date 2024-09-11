@@ -82,32 +82,32 @@
             </div>
         </div>
     </section>
-    <section class="relative sm:flex">
+    <section class="relative">
         <div class="hidden sm:block sm:absolute sm:overflow-hidden sm:bottom-0">
             <img class="-translate-x-[62%] translate-y-1/2" src="./images/bg-tablet-pattern.svg"/>
         </div>
-        <section class="relative flex flex-col gap-2 px-4">
-            <h3 class="font-bold text-3.5xl text-center leading-11 tracking-tight-md pt-2">
-                What’s different <br/> about Manage?
-            </h3>
-            <p class="text-blue-gray text-sm text-center leading-7 tracking-tight font-medium px-4 pb-4">
-                Manage provides all the functionality your team needs, without
-                the complexity. Our software is tailor-made for modern digital
-                product teams.
-            </p>
-        </section>
-        <section class="relative">
+        <section class="relative sm:flex max-w-screen-xl mx-auto md:px-20 md:gap-24">
+            <div class="flex flex-col gap-2 px-4 md:gap-6 md:pt-10">
+                <h3 class="font-bold text-3.5xl text-center leading-11 tracking-tight-md pt-2 md:text-[2.5rem] md:text-start">
+                    What’s different <br class="md:hidden"/> about <br class="hidden md:block"/> Manage?
+                </h3>
+                <p class="text-blue-gray text-sm text-center leading-7 tracking-tight font-medium px-4 pb-4 md:text-base md:font-normal md:text-start md:pl-0 md:pr-8 md:max-w-sm">
+                    Manage provides all the functionality your team needs, without
+                    the complexity. Our software is tailor-made for modern digital
+                    product teams.
+                </p>
+            </div>
             <ul class="pt-.5 space-y-10">
-                <template x-for="point in sellingPoints" :key="index">
-                    <li class="pl-4">
-                        <p class="inline-flex bg-red-pale rounded-l-full w-full gap-4">
-                            <span class="block bg-red rounded-full text-red-pale font-medium px-6 py-2" x-text="point.number"></span>
-                            <span class="grow py-2 font-bold tracking-tighter" x-text="point.title"></span>
-                        </p>
-                        <p class="text-blue-gray text-sm leading-7 tracking-tight pt-3 pe-4" x-text="point.description"></p>
-                    </li>
-                </template>
-            </ul>
+                    <template x-for="point in sellingPoints" :key="index">
+                        <li class="pl-4">
+                            <p class="inline-flex bg-red-pale rounded-l-full w-full gap-4 md:bg-white">
+                                <span class="block bg-red rounded-full text-red-pale font-medium px-6 py-2 md:font-bold" x-text="point.number"></span>
+                                <span class="grow py-2 font-bold tracking-tighter" x-text="point.title"></span>
+                            </p>
+                            <p class="text-blue-gray text-sm leading-7 tracking-tight pt-3 pe-4 md:text-base md:max-w-md md:ml-20 md:pl-1" x-text="point.description"></p>
+                        </li>
+                    </template>
+                </ul>
         </section>
     </section>
     <section>

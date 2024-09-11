@@ -1634,6 +1634,10 @@ video {
     margin-bottom: 4rem;
   }
 
+  .md\:ml-20 {
+    margin-left: 5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -1664,6 +1668,10 @@ video {
 
   .md\:max-w-sm {
     max-width: 24rem;
+  }
+
+  .md\:max-w-md {
+    max-width: 28rem;
   }
 
   .md\:shrink-0 {
@@ -1710,8 +1718,21 @@ video {
     gap: 2rem;
   }
 
+  .md\:gap-16 {
+    gap: 4rem;
+  }
+
+  .md\:gap-24 {
+    gap: 6rem;
+  }
+
   .md\:overflow-hidden {
     overflow: hidden;
+  }
+
+  .md\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .md\:px-20 {
@@ -1785,6 +1806,10 @@ video {
     padding-right: 2rem;
   }
 
+  .md\:pt-10 {
+    padding-top: 2.5rem;
+  }
+
   .md\:text-start {
     text-align: start;
   }
@@ -1803,8 +1828,30 @@ video {
     font-size: 3.5rem;
   }
 
+  .md\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+
+  .md\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .md\:text-\[2\.5rem\] {
+    font-size: 2.5rem;
+  }
+
   .md\:font-medium {
     font-weight: 500;
+  }
+
+  .md\:font-bold {
+    font-weight: 700;
+  }
+
+  .md\:font-normal {
+    font-weight: 400;
   }
 
   .md\:leading-\[5rem\] {
@@ -1821,6 +1868,10 @@ video {
 
   .md\:tracking-tighter {
     letter-spacing: -0.05em;
+  }
+
+  .md\:text-\[\] {
+    color: ;
   }
 }
 
