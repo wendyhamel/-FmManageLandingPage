@@ -1280,6 +1280,11 @@ video {
   opacity: 0.8;
 }
 
+.focus\:text-red:focus {
+  --tw-text-opacity: 1;
+  color: hsl(12 88% 59% / var(--tw-text-opacity));
+}
+
 .focus\:outline-blue:focus {
   outline-color: hsl(228, 39%, 23%);
 }

@@ -52,7 +52,7 @@
           <ul class="flex flex-col justify-center gap-6">
             <template x-for="item in menuItems" :key="index">
               <li class="mx-3">
-                <a class="font-bold text-sm" :href="item.href" x-text="item.title"></a>
+                <a class="font-bold text-sm focus:text-red" :href="item.href" x-text="item.title"></a>
               </li>
             </template>
           </ul>
