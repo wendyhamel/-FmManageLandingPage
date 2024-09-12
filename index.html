@@ -43,16 +43,16 @@
         <span x-show="!menuOpened" class="w-4 h-4">
           <img src="./images/icon-hamburger.svg" alt=""/>
         </span>
-        <span x-show="menuOpened" class="w-4 h-4">
+        <span x-cloak x-show="menuOpened" class="w-4 h-4">
           <img src="./images/icon-close.svg"/>
         </span>
       </button>
-      <div x-show="menuOpened" style="display:none !important;" class="fixed inset-0 px-6 pt-2 bg-gradient-to-t from-black/70" x-trap.noscroll="menuOpened">
+      <div x-cloak x-show="menuOpened" style="display:none !important;" class="fixed inset-0 px-6 pt-2 bg-gradient-to-t from-black/70" x-trap.noscroll="menuOpened">
         <div class="py-10 px-4 mt-24 text-center rounded bg-white shadow-2xl">
           <ul class="flex flex-col justify-center gap-6">
             <template x-for="item in menuItems" :key="index">
               <li class="mx-3">
-                <a class="font-bold text-sm focus:text-red" :href="item.href" x-text="item.title"></a>
+                <a class="font-bold text-sm hover:text-red focus:text-red" :href="item.href" x-text="item.title"></a>
               </li>
             </template>
           </ul>

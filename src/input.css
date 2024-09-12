@@ -26,6 +26,8 @@
 	src: url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.woff") format('woff'), url("../assets/fonts/Be_Vietnam_Pro/BeVietnamPro-Bold.ttf") format('ttf');
 }
 
+[x-cloak] {display: none !important}
+
 .hide-scrollbar {
 	-ms-overflow-style: none;
 	scrollbar-width: none;
