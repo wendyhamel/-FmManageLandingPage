@@ -19,9 +19,10 @@
 
 </head>
 <body x-data="showContent()" class="antialiased text-blue">
-<div class="absolute overflow-hidden right-0">
-    <img class="-translate-y-[20%] translate-x-[25%] scale-[1.2] sm:scale-100" src="./images/bg-tablet-pattern.svg"/>
-</div>
+<section class="absolute overflow-hidden right-0">
+    <h1 class="sr-only">Manage landing page</h1>
+    <img class="-translate-y-[20%] translate-x-[25%] scale-[1.2] sm:scale-100" src="./images/bg-tablet-pattern.svg" alt=""/>
+</section>
 <header class="relative px-6 py-10 max-w-screen-xl mx-auto lg:px-20 lg:pt-14 lg:mb-16">
   <nav class="relative z-10 flex items-center justify-between gap-6">
     <a class="md:pt-2 lg:shrink-0 lg:pl-1.5" href="#">
@@ -44,7 +45,7 @@
           <img src="./images/icon-hamburger.svg" alt=""/>
         </span>
         <span x-cloak x-show="menuOpened" class="w-4 h-4">
-          <img src="./images/icon-close.svg"/>
+          <img src="./images/icon-close.svg" alt=""/>
         </span>
       </button>
       <div x-cloak x-show="menuOpened" style="display:none !important;" class="fixed inset-0 px-6 pt-2 bg-gradient-to-t from-black/70" x-trap.noscroll="menuOpened">
@@ -63,7 +64,7 @@
 </header>
 <main class="relative">
     <div class="absolute overflow-hidden right-0 top-[382px] -mb-10 sm:left-0 sm:top-[920px]">
-        <img class="scale-[82%] translate-x-[55%] sm:scale-100 sm:-translate-x-[62%]" src="./images/bg-tablet-pattern.svg"/>
+        <img class="scale-[82%] translate-x-[55%] sm:scale-100 sm:-translate-x-[62%]" src="./images/bg-tablet-pattern.svg" alt=""/>
     </div>
     <section class="relative pb-20 max-w-screen-xl mx-auto md:px-20 md:pt-1">
         <div class="relative grid gap-2 pb-2 px-4 md:grid-cols-2 md:px-0">
@@ -117,7 +118,7 @@
                         x-intersect.full="activeTm = testimonial.id"
                         :id="testimonial.id"
                     >
-                        <img class="rounded-full w-[4.5rem] h-[4.5rem] -mt-8 mx-auto" :src="testimonial.image" :alt="testimonial.name + ' ' + testimonial.description">
+                        <img class="rounded-full w-[4.5rem] h-[4.5rem] -mt-8 mx-auto" :src="testimonial.image" :alt="testimonial.name">
                         <p class="font-bold text-center lg:pt-1" x-text="testimonial.name"></p>
                         <p class="text-blue-gray text-sm leading-6 tracking-tight text-center px-4 lg:text-base lg:tracking-normal lg:leading-[1.7]" x-text="testimonial.description"></p>
                     </li>
